@@ -1,0 +1,13 @@
+class Solution:
+    def minDeletion(self, nums: List[int]) -> int:
+        countD = 0
+        for i in range(len(nums)-1):
+            if(i % 2 == 0)and(nums[i] == nums[i + 1]):
+                countD += 1
+                
+        if (len(nums)-countD)%2 == 0:
+            return countD
+        elif len(nums)==1:
+            return 1
+        else:
+            return countD-1
